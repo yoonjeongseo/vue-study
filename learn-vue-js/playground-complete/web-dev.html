@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    
+  </div>
+
+  <script>
+    var div = document.querySelector("#app");
+
+    //console.log(div);
+    //콘솔로 div를 찍어보면 html태그로 콘솔이 찍힌다.
+    //<div id="app"></div>
+
+
+    var str = "hello world"
+    div.innerHTML = str;
+    //div에 str에 담긴 글자 출력
+
+    str = "hello world!!!"
+
+    //////case 1의 경우 str에 재선언한 hello world!!!이 html에 바껴서 출력되지 않는다.
+
+    div.innerHTML = str;
+
+    //////case 2처럼  div.innerHTML = str; 이것을 선언 해줘야 바껴서 출력이 가능하다
+    
+
+
+  </script>
+</body>
+</html>
