@@ -13,7 +13,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
-    // var options = 
+    // var options = {
+      // el: '#app',
+      // data: {
+      //   message: 'hi'
+      // },
+    //}
+    //var vm = new Vue(options);
+    //위의 방식보다 아래의 방식이 더 가독성이 좋다
+
+    //var vm = new Vue(객체 표기법으로 표기);
+
     var vm = new Vue({
       el: '#app',
       data: {
@@ -24,8 +34,12 @@
       },
       created: function() {
 
-      }
+      },
+
+      
     });
+
+    
   </script>
 </body>
 </html>

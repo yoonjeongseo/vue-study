@@ -18,6 +18,8 @@
     // })
 
     (function() {
+      //=> 즉시 실행함수
+
       function init() {
         Object.defineProperty(viewModel, 'str', {
           // 속성에 접근했을 때의 동작을 정의
@@ -34,6 +36,8 @@
 
       function render(value) {
         div.innerHTML = value;
+        //html에 값을 출력
+        //데이터의 내용을 화면에 출력하게 해주는 것이 바로 => 데이터 바인딩
       }
 
       init();
