@@ -9,7 +9,10 @@
 <body>
   <div id="app">
     <!-- <app-header v-on: 하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 메서드 이름"></app-header> -->
+    <p> {{ num }}</p>
     <app-header v-on:pass="logText"></app-header>
+    <app-content v-on:increase="increaseNumber"></app-content>
+    <app-footer v-on:minus="minusNum"></app-footer>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -24,15 +27,47 @@
       }
     }
 
+    var appContent = {
+      template: '<button v-on:click="addNumber">add</button>',
+      methods: {
+        addNumber: function() {
+          this.$emit('increase');
+        }
+      }
+    } 
+
+    var appFooter = {
+      template: '<button v-on:click="minusNumber">minus</button>',
+      methods: {
+        minusNumber: function() {
+          this.$emit('minus');
+        }
+      }
+    }
+
     new Vue({
       el: "#app",
       components: {
-        "app-header": appHeader
+        "app-header": appHeader,
+        "app-content": appContent,
+        "app-footer": appFooter
       },
       methods: {
         logText: function(){
           console.log('hi');
+          this.ber = this.ber * 2;
+        },
+        increaseNumber: function() {
+          this.num = this.num + 1;
+        },
+        minusNum: function() {
+          this.txtnum = this.txtnum / 5
         }
+      },
+      data: {
+        num: 10,
+        ber: 1,
+        txtnum: 1000,
       }
     });
   </script>
