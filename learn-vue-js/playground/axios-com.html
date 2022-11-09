@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Axios</title>
+  <title>Document</title>
 </head>
 <body>
   <div id="app">
@@ -18,28 +18,23 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
     new Vue({
-      el: '#app',
+      el: "#app",
       data: {
         users: []
       },
       methods: {
-        getData: function() { 
+        getData: function() {
           var vm = this;
           axios.get('https://jsonplaceholder.typicode.com/users/')
             .then(function(response) {
-              console.log(response.data);
+              console.log(response);
               vm.users = response.data;
             })
-            .catch(function(error) {
+            .catch(function(error){
               console.log(error);
             });
         }
       }
-      //자바스크립트의 비동기패턴
-      //callback
-      //promise
-      //promise + generator
-      //async & await
     })
   </script>
 </body>
