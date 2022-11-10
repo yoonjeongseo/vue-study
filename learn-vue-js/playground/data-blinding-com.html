@@ -13,6 +13,21 @@
     <!-- 위와 아래의 내용이 같다 -->
     <!-- v-bind가 붙게 되면 아이디라는 속성에는 뷰의 데이터에서 관리되는 특정 데이터값이 연결이된다  -->
     <p>{{ doubleNum }}</p>
+    <div v-if="loading">
+      <!-- loading 데이터값이 true일 경우 보인다 -->
+      Loading...
+    </div>
+    <div v-else>
+      <!-- loading 데이터값이 false일 경우 보인다 -->
+      test user has been logged in
+    </div>
+    <div v-show="loading">
+      Loading...
+    </div>
+    <!-- if와 show의 차이점은 
+    
+    if는 false일 경우 돔을 아예 제거,
+    show는 display만 none으로 바꾼다  -->
   </div>
 
 
@@ -23,7 +38,8 @@
       data: {
         num: 10,
         uuid: 'abc1234',
-        name: 'text'
+        name: 'text',
+        loading: true
       },
       computed: { 
         //데이터 속성안에 따로 만들지 않고 computed를 통해  doubleNum을 받을 수 있다
