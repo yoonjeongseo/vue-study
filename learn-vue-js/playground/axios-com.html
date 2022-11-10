@@ -11,6 +11,7 @@
     <button v-on:click="getData">get user</button>
     <div>
       {{ users }}
+      <!-- 뿌린데이터가 나타나는 영역 -->
     </div>
   </div>
 
@@ -21,6 +22,7 @@
       el: "#app",
       data: {
         users: []
+        //데이터를 받아오기 위해 빈배열 선언
       },
       methods: {
         getData: function() {
@@ -29,10 +31,11 @@
             .then(function(response) {
               console.log(response);
               vm.users = response.data;
-            })
+            })//데이터를 받아오는게 성공하면 then
+
             .catch(function(error){
               console.log(error);
-            });
+            });//데이터를 받아오는게 실패하먄 catch
         }
       }
     })

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p v-bind:id="uuid" v-bind:class="name">{{ num }}</p>
+    <!-- <p id="abc1234">{{ num }}</p> -->
+    <!-- 위와 아래의 내용이 같다 -->
+    <!-- v-bind가 붙게 되면 아이디라는 속성에는 뷰의 데이터에서 관리되는 특정 데이터값이 연결이된다  -->
+    <p>{{ doubleNum }}</p>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        num: 10,
+        uuid: 'abc1234',
+        name: 'text'
+      },
+      computed: { 
+        //데이터 속성안에 따로 만들지 않고 computed를 통해  doubleNum을 받을 수 있다
+        //또한 num값을 받아서 저절로 같이 계산된다
+        doubleNum: function(){
+          return this.num * 2;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
