@@ -22,14 +22,24 @@
         doubleNum: function() {
           return this.num * 2;
         }
+      //doubleNum은 데아터 속성중에 num이라는 속성을 곱한 값을 계속 return
+      //doubleNum을 html에서 콧수염괄호로 표시하면 화면에서 자동으로 데이터값을 받아와서 표시 한다.
+
+      //단순한 값에 대한 계산, valudation에 대한 대부분을 계산 
       },
       watch: {
+      //watch는 값의 변화를 추적하기 떄문에  newValue(새로운 값), oldValue(이전 값) 두 개를 인지로 받을 수 있다
         num: function(newValue, oldValue) {
           this.fetchUserByNumber(newValue);
+//1. 새로운 값을 인자로 받아서
         }
+        //무거운 로직들을 대부분 실행
+        //예를 들면 데이터 요청같은 것
       },
       methods: {
+//1. 새로운 값을 인자로 받아서
         fetchUserByNumber: function(num) {
+//2. 그 값이 num인자로 받는다(num = newValue)
           // console.log(num);
           axios.get(num);
         }

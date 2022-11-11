@@ -27,7 +27,13 @@
     <!-- if와 show의 차이점은 
     
     if는 false일 경우 돔을 아예 제거,
-    show는 display만 none으로 바꾼다  -->
+    show는 display만 none으로 바꾸고 돔의 정보는 남아있다  -->
+
+    <!-- TODO: 인풋 박스를 만들고 입력된 값을 p 태그에 출력해보세요 -->
+    <input v-model="message" type="text">
+    <!-- v-model로 메세지를 연결힌다 -->
+    <p> {{ message }} </p>
+    <!-- 콧수염괄호 안에 메세지로 연결 -->
   </div>
 
 
@@ -39,7 +45,9 @@
         num: 10,
         uuid: 'abc1234',
         name: 'text',
-        loading: true
+        loading: true,
+        message: ''
+        //메세지 데이터에 빈열을 받고,
       },
       computed: { 
         //데이터 속성안에 따로 만들지 않고 computed를 통해  doubleNum을 받을 수 있다
