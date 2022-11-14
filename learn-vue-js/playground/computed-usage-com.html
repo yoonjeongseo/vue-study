@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .warning {
+      color: red;
+    }
+    </style>
+  </head>
+</head>
+<body>
+  <div id="app">
+    <!-- <p v-bind:class="cname">hello</p> -->
+    <p v-bind:class="errTextColor">hello</p>
+    <!-- p태그에서 isError에 블린 값에 따라서 클래스 스타일이 들어가는 지 안들어가는지가 결정된다 -->
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        // cname: "blue-text",
+        isError: false,
+      },
+      computed: {
+        errTextColor: function() {
+          // if(isError) {
+          //   return 'warning';
+          // } else {
+          //   null;
+          // }
+
+          return this.isError ? 'warning' : null;
+          
+          // computed에서 data속성에 접근하려면 this를 붙여야한다
+        }
+      }
+    })
+  </script>
+</body>
+</html>
